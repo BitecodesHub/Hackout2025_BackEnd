@@ -3,6 +3,7 @@ package com.Hackout.controller;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,20 +32,26 @@ public class SiteController {
     }
 
 
-//    @GetMapping("/top")
-//    public TopSitesResponse getTopSites(@RequestParam String region) {
-//        TopSitesRequest request = new TopSitesRequest();
-//        request.setRegion(region);
-//        return siteService.getTopSites(request);
-//        
-//    }
-    private String mlServiceUrl="http://localhost:8081";
+    
+    @Value("${ai.service.url}")
+    private String aiServiceUrl;
     
     @GetMapping("/hello")
     public ResponseEntity<String> displayHello(){
     
 
         return ResponseEntity.ok("Hello");
+    }
+    @GetMapping("/statistics/summary")
+    public ResponseEntity<?> getSummaryStatistics() {
+        try {
+            ResponseEntity<String> response = restTemplate.getForEntity(
+                    aiServiceUrl + "/ml/statistics/summary", String.class);
+
+            return ResponseEntity.status(response.getStatusCode()).body(response.getBody());
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to fetch summary statistics", e);
+        }
     }
     
     @GetMapping("/nearest")
@@ -65,7 +72,7 @@ public class SiteController {
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers);
 
             // Forward request to ML service
-            ResponseEntity<String> response = restTemplate.postForEntity(mlServiceUrl + "/ml/portfolio/optimize", entity, String.class);
+            ResponseEntity<String> response = restTemplate.postForEntity(aiServiceUrl + "/ml/portfolio/optimize", entity, String.class);
 
             // Return the ML service response
             return ResponseEntity.status(response.getStatusCode()).body(response.getBody());
