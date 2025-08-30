@@ -2,11 +2,7 @@
 # Spring Boot / Maven
 # -------------------------
 
-# Ignore all target contents
-target/*
-
-# But keep any JARs in target
-!target/*.jar
+# (Removed target ignore so full target/ is committed)
 
 # Ignore Maven wrapper jar (optional)
 .mvn/wrapper/maven-wrapper.jar
@@ -48,4 +44,3 @@ target/*
 # Misc
 # -------------------------
 HELP.md
-/target/

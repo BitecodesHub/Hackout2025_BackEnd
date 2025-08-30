@@ -16,6 +16,7 @@ import com.Hackout.services.LcohService;
 public class LcohController {
     @Autowired
     private LcohService lcohService;
+    int hell;
 
     @PostMapping("/calculate")
     public LcohCalculateResponse calculate(@RequestBody LcohCalculateRequest request) {
