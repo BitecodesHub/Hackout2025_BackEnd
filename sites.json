@@ -127,7 +127,7 @@
 	   "Feasibility_Score": 0.94
 	 },
 	 {
-	   "City": "Sanand (near Ahmedabad), Gujarat",
+	   "City": "Ahmedabad, Gujarat",
 	   "Latitude": 23.0600,
 	   "Longitude": 72.3800,
 	   "Solar_Irradiance_kWh/m²/day": 5.9,
@@ -142,7 +142,7 @@
 	   "Feasibility_Score": 0.97
 	 },
 	 {
-	   "City": "Kalol (North of Ahmedabad), Gujarat",
+	   "City": "Kalol, Ahmedabad, Gujarat",
 	   "Latitude": 23.2500,
 	   "Longitude": 72.4900,
 	   "Solar_Irradiance_kWh/m²/day": 5.7,

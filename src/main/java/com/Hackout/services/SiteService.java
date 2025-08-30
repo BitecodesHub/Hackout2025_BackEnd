@@ -28,13 +28,15 @@ public class SiteService {
         String endpoint = "/ml/sites/top?region=" + request.getRegion();
         return apiClient.get(endpoint, TopSitesResponse.class);
     }
-
     public List<Site> getSitesByCity(String city) {
+        String search = city.toLowerCase();
+
         return getAllSites()
                 .stream()
-                .filter(site -> site.getCity().equalsIgnoreCase(city))
+                .filter(site -> site.getCity() != null && site.getCity().toLowerCase().contains(search))
                 .collect(Collectors.toList());
     }
+
  // Haversine formula to calculate distance in km
     private double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
         final int R = 6371; // Earth radius in km
