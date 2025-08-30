@@ -1,10 +1,18 @@
-HELP.md
+# -------------------------
+# Spring Boot / Maven
+# -------------------------
+
+# Ignore Maven build outputs
 target/
 .mvn/wrapper/maven-wrapper.jar
+
+# Allow module-specific targets
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# -------------------------
+# Spring Tool Suite (STS)
+# -------------------------
 .apt_generated
 .classpath
 .factorypath
@@ -13,21 +21,33 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
+# -------------------------
+# IntelliJ IDEA
+# -------------------------
 .idea
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# -------------------------
+# NetBeans
+# -------------------------
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
+
+# Allow module-specific builds
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+# -------------------------
+# VS Code
+# -------------------------
 .vscode/
+
+# -------------------------
+# Misc
+# -------------------------
+HELP.md
