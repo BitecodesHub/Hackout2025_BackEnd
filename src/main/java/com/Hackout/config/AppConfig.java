@@ -3,7 +3,6 @@ package com.Hackout.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.client.RestTemplate;
 
 import com.Hackout.services.ApiClientService;
@@ -23,9 +22,9 @@ public class AppConfig {
     public ApiClientService apiClientService(RestTemplate restTemplate) {
         return new ApiClientService(restTemplate, apiUrl);
     }
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+//    @Bean
+//    public BCryptPasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
     
 }

@@ -10,8 +10,6 @@ import jakarta.persistence.Id;
 
 import java.util.*;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
@@ -187,10 +185,10 @@ public class User {
 	public void setOtpExpiry(LocalDateTime otpExpiry) {
 		this.otpExpiry = otpExpiry;
 	}
-
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role));
-	}
+//
+//	public Collection<? extends GrantedAuthority> getAuthorities() {
+//		return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role));
+//	}
 
 	public String getBio() {
 		return bio;
