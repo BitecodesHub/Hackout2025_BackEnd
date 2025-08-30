@@ -32,7 +32,7 @@ public class SiteController {
    
 
     
-    @Value("${ai.service.url}")
+    @Value("${ai.api.url}")
     private String aiServiceUrl;
     
     @GetMapping("/hello")
