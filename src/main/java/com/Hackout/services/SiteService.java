@@ -60,13 +60,13 @@ public class SiteService {
     }
     
  // Get top N sites based on Hydrogen Production AND System Efficiency
-    public List<Site> getTopSitesByHydrogenAndEfficiency(int limit) {
+    public List<Site> getTopSitesByFeasibility(int limit) {
         List<Site> allSites = getAllSites();
 
         return allSites.stream()
                 .sorted(Comparator
-                        .comparingDouble(Site::getHydrogenProduction).reversed()
-                        .thenComparingDouble(Site::getSystemEfficiency).reversed())
+                        .comparingDouble(Site::getFeasibilityScore)
+                        .reversed())
                 .limit(limit)
                 .collect(Collectors.toList());
     }

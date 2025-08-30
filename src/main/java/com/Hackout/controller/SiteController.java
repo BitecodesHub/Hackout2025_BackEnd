@@ -46,7 +46,7 @@ public class SiteController {
     
     @GetMapping("/top")
     public List<Site> getTop10Sites() {
-        return siteService.getTopSitesByHydrogenAndEfficiency(10);
+        return siteService.getTopSitesByFeasibility(10);
     }
     
     @GetMapping()
