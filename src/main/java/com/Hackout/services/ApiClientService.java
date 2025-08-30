@@ -13,7 +13,7 @@ import com.Hackout.config.ApiCallException;
 @Service
 public class ApiClientService {
     private final RestTemplate restTemplate;
-    private final String baseUrl;
+    private  String baseUrl="Http";
 
     public ApiClientService(RestTemplate restTemplate, String baseUrl) {
         this.restTemplate = restTemplate;

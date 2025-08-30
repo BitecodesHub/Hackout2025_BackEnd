@@ -48,3 +48,4 @@ target/*
 # Misc
 # -------------------------
 HELP.md
+/target/
