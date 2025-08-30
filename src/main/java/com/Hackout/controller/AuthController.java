@@ -5,12 +5,9 @@ import com.Hackout.repositories.UserRepository;
 import com.Hackout.response_request.ApiResponse;
 import com.Hackout.response_request.LoginRequest;
 import com.Hackout.response_request.LoginResponse;
-import com.Hackout.response_request.OtpVerificationRequest;
 import com.Hackout.response_request.UserUpdateDTO;
 import com.Hackout.security.JwtService;
 import com.Hackout.services.CustomUserDetailsService;
-import com.Hackout.services.EmailService;
-import com.Hackout.services.OtpService;
 import com.Hackout.services.RegistrationService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +18,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -35,28 +31,25 @@ public class AuthController {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     private final CustomUserDetailsService userDetailsService;
-    private final EmailService emailService;
-    private final OtpService otpService;
 
     @Autowired
     public AuthController(
             RegistrationService registrationService,
             UserRepository userRepository,
             JwtService jwtService,
-            EmailService emailService,
             AuthenticationManager authenticationManager,
-            OtpService otpService,
             CustomUserDetailsService userDetailsService) {
         this.registrationService = registrationService;
         this.userRepository = userRepository;
         this.jwtService = jwtService;
         this.authenticationManager = authenticationManager;
         this.userDetailsService = userDetailsService;
-        this.emailService = emailService;
-        this.otpService = otpService;
     }
 
-    
+    @GetMapping("/hello")
+    public String getHello() {
+        	return "Hello";
+        }
 
         @PutMapping("/update/{id}")
         public ResponseEntity<?> updateUser(@PathVariable String id, @RequestBody UserUpdateDTO updatedUser) {
@@ -149,45 +142,7 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody User user) {
-        try {
-            if (!registrationService.validUser(user)) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Registration failed: Email or Username Already Exist");
-            }
-            registrationService.registerUser(user);
-            return ResponseEntity.ok("User registered. Check your email for OTP.");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Registration failed: " + e.getMessage());
-        }
-    }
-
-    @PostMapping("/resend-otp/{email}")
-    public ResponseEntity<String> resendOtp(@PathVariable String email) {
-        String otp = otpService.generateOtp();
-        LocalDateTime otpExpiry = otpService.getOtpExpiryTime();
-        User user = userRepository.findByEmail(email).orElse(null);
-        if (user == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found.");
-        }
-        user.setOtp(otp);
-        user.setOtpExpiry(otpExpiry);
-        userRepository.save(user);
-        new Thread(() -> emailService.sendOtpEmail(email, otp)).start();
-        return ResponseEntity.status(HttpStatus.OK).body("OTP Sent Successfully");
-    }
-
-    @PostMapping("/verify-otp")
-    public ResponseEntity<ApiResponse> verifyOtp(@RequestBody OtpVerificationRequest request) {
-        boolean verified = registrationService.verifyOtp(request.getEmail(), request.getOtp());
-        if (verified) {
-            return ResponseEntity.ok(new ApiResponse(true, "Email verified!"));
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(new ApiResponse(false, "Invalid or expired OTP."));
-        }
-    }
-
+    
     @GetMapping("/user/{id}")
     public ResponseEntity<?> getUser(@PathVariable String id) {
         try {
