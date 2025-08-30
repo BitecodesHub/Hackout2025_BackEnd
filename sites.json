@@ -93,8 +93,8 @@
 	  "Electrolyzer_Efficiency_%": 75.0,
 	  "Hydrogen_Production_kg/day": 5454,
 	  "Desalination_Power_kW": 0,
-	  "System_Efficiency_%": 75.0,
-	  "Feasibility_Score": 0.90
+	  "System_Efficiency_%": 95.0,
+	  "Feasibility_Score": 0.98
 	},
 	{
 	  "City": "Kandla, Gujarat",
@@ -108,8 +108,8 @@
 	  "Electrolyzer_Efficiency_%": 75.0,
 	  "Hydrogen_Production_kg/day": 383,
 	  "Desalination_Power_kW": 0,
-	  "System_Efficiency_%": 75.0,
-	  "Feasibility_Score": 0.85
+	  "System_Efficiency_%": 92.0,
+	  "Feasibility_Score": 0.99
 	},
 	{
 	   "City": "Gandhinagar, Gujarat",
@@ -123,7 +123,7 @@
 	   "Electrolyzer_Efficiency_%": 74.5,
 	   "Hydrogen_Production_kg/day": 2300,
 	   "Desalination_Power_kW": 0,
-	   "System_Efficiency_%": 74.0,
+	   "System_Efficiency_%": 99.0,
 	   "Feasibility_Score": 0.88
 	 },
 	 {
@@ -138,7 +138,7 @@
 	   "Electrolyzer_Efficiency_%": 75.0,
 	   "Hydrogen_Production_kg/day": 2500,
 	   "Desalination_Power_kW": 0,
-	   "System_Efficiency_%": 75.0,
+	   "System_Efficiency_%": 85.0,
 	   "Feasibility_Score": 0.91
 	 },
 	 {
@@ -168,8 +168,8 @@
 	  "Electrolyzer_Efficiency_%": 75.0,
 	  "Hydrogen_Production_kg/day": 2727,
 	  "Desalination_Power_kW": 0,
-	  "System_Efficiency_%": 75.0,
-	  "Feasibility_Score": 0.90
+	  "System_Efficiency_%": 90.0,
+	  "Feasibility_Score": 0.93
 	},
 	
 	{
@@ -229,8 +229,8 @@
 	    "Electrolyzer_Efficiency_%": 75.0,
 	    "Hydrogen_Production_kg/day": 197,
 	    "Desalination_Power_kW": 0,
-	    "System_Efficiency_%": 65.0,
-	    "Feasibility_Score": 0.70
+	    "System_Efficiency_%": 91.0,
+	    "Feasibility_Score": 0.92
 	  },
     {
       "City": "City-1",
