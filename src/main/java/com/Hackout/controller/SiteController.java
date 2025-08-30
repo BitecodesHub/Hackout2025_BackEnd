@@ -24,14 +24,12 @@ import com.Hackout.services.SiteService;
 @CrossOrigin("*")
 public class SiteController {
 
-    private final SiteService siteService;
-    private final RestTemplate restTemplate;
+	@Autowired
+    private SiteService siteService;
+	@Autowired
+    private  RestTemplate restTemplate;
     
-    public SiteController(RestTemplate restTemplate,SiteService siteService) {
-    	this.siteService=siteService;
-        this.restTemplate = restTemplate;
-    }
-
+   
 
     
     @Value("${ai.service.url}")
