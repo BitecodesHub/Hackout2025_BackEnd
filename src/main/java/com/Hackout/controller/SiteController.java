@@ -23,11 +23,12 @@ import com.Hackout.services.SiteService;
 @RequestMapping("/ml/sites")
 @CrossOrigin("*")
 public class SiteController {
-    @Autowired
+
     private SiteService siteService;
     private final RestTemplate restTemplate;
     
-    public SiteController(RestTemplate restTemplate) {
+    public SiteController(RestTemplate restTemplate,SiteService siteService) {
+    	this.siteService=siteService;
         this.restTemplate = restTemplate;
     }
 
