@@ -47,9 +47,10 @@ public class SiteService {
                 .stream()
                 .filter(site -> site.getCity() != null && site.getCity().toLowerCase().contains(search))
                 .collect(Collectors.toList());
+       System.err.println(sites.toString());
        sites.forEach(site -> enrichWithEconomics(site, cap));
        
-        return null;
+         return sites;
     }
 
     // Haversine formula to calculate distance in km
