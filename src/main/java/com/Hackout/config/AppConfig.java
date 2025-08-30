@@ -14,6 +14,7 @@ public class AppConfig {
 	@Value("${ai.api.url}")
     private String apiUrl;
 
+	
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();

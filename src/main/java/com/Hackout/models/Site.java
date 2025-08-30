@@ -53,7 +53,45 @@ public class Site {
 
 	    @JsonProperty("Feasibility_Score")
 	    private double feasibilityScore;  
+	    
+	    private double lcoh;
+	    private double roi;
+	    
     
+	public Site(Long id, String city, double latitude, double longitude, double solarIrradiance, double temperature,
+				double windSpeed, double pvPower, double windPower, double electrolyzerEfficiency,
+				double hydrogenProduction, double desalinationPower, double systemEfficiency, double feasibilityScore,
+				double lcoh, double roi) {
+			super();
+			this.id = id;
+			this.city = city;
+			this.latitude = latitude;
+			this.longitude = longitude;
+			this.solarIrradiance = solarIrradiance;
+			this.temperature = temperature;
+			this.windSpeed = windSpeed;
+			this.pvPower = pvPower;
+			this.windPower = windPower;
+			this.electrolyzerEfficiency = electrolyzerEfficiency;
+			this.hydrogenProduction = hydrogenProduction;
+			this.desalinationPower = desalinationPower;
+			this.systemEfficiency = systemEfficiency;
+			this.feasibilityScore = feasibilityScore;
+			this.lcoh = lcoh;
+			this.roi = roi;
+		}
+	public double getLcoh() {
+			return lcoh;
+		}
+		public void setLcoh(double lcoh) {
+			this.lcoh = lcoh;
+		}
+		public double getRoi() {
+			return roi;
+		}
+		public void setRoi(double roi) {
+			this.roi = roi;
+		}
 	public Long getId() {
 		return id;
 	}
@@ -138,25 +176,7 @@ public class Site {
 	public void setFeasibilityScore(double feasibilityScore) {
 		this.feasibilityScore = feasibilityScore;
 	}
-	public Site(Long id, String city, double latitude, double longitude, double solarIrradiance, double temperature,
-			double windSpeed, double pvPower, double windPower, double electrolyzerEfficiency,
-			double hydrogenProduction, double desalinationPower, double systemEfficiency, double feasibilityScore) {
-		super();
-		this.id = id;
-		this.city = city;
-		this.latitude = latitude;
-		this.longitude = longitude;
-		this.solarIrradiance = solarIrradiance;
-		this.temperature = temperature;
-		this.windSpeed = windSpeed;
-		this.pvPower = pvPower;
-		this.windPower = windPower;
-		this.electrolyzerEfficiency = electrolyzerEfficiency;
-		this.hydrogenProduction = hydrogenProduction;
-		this.desalinationPower = desalinationPower;
-		this.systemEfficiency = systemEfficiency;
-		this.feasibilityScore = feasibilityScore;
-	}
+
 	public Site() {
 		super();
 		// TODO Auto-generated constructor stub
