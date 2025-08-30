@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Hackout.models.Site;
-import com.Hackout.response_request.TopSitesRequest;
-import com.Hackout.response_request.TopSitesResponse;
 import com.Hackout.services.SiteService;
 
 @RestController
