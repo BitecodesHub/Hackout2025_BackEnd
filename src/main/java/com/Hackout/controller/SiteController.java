@@ -99,8 +99,8 @@ public class SiteController {
     
     // Get sites filtered by city
     @GetMapping("/city")
-    public List<Site> getSitesByCity(@RequestParam String name) {
-        return siteService.getSitesByCity(name);
+    public List<Site> getSitesByCity(@RequestParam String name,@RequestParam double cap) {
+        return siteService.getSitesByCity(name,cap);
     }
     // Add /frontier/efficient if needed
 }

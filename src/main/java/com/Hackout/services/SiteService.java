@@ -39,13 +39,17 @@ public class SiteService {
         return apiClient.get(endpoint, TopSitesResponse.class);
     }
 
-    public List<Site> getSitesByCity(String city) {
+    public List<Site> getSitesByCity(String city,double cap) {
         String search = city.toLowerCase();
+        List<Site> sites = null;
 
-        return getAllSites()
+       sites=getAllSites()
                 .stream()
                 .filter(site -> site.getCity() != null && site.getCity().toLowerCase().contains(search))
                 .collect(Collectors.toList());
+       sites.forEach(site -> enrichWithEconomics(site, cap));
+       
+        return null;
     }
 
     // Haversine formula to calculate distance in km
@@ -76,7 +80,8 @@ public class SiteService {
     public List<Site> getTopSitesByFeasibility(int limit) {
         List<Site> allSites = getAllSites();
 
-        allSites.forEach(this::enrichWithEconomics);
+//        allSites.forEach(this::enrichWithEconomics);
+        allSites.forEach(site -> enrichWithEconomics(site, null));
 
         return allSites.stream()
                 .sorted(Comparator
@@ -89,8 +94,9 @@ public class SiteService {
     /**
      * Enrich a Site with calculated LCOH and ROI.
      */
-    private void enrichWithEconomics(Site site) {
-        double capex = INITIAL_INVESTMENT;
+    private void enrichWithEconomics(Site site,Double cap) {
+//        double capex = INITIAL_INVESTMENT;
+        double capex = (cap!=null && cap > 0) ? cap : INITIAL_INVESTMENT;
         double opex = (capex * OPEX_FACTOR);
         double hydrogenProduction = site.getHydrogenProduction() > 0 ? site.getHydrogenProduction() : 1000.0;
         if (hydrogenProduction <= 0) {
@@ -119,7 +125,10 @@ public class SiteService {
                 JsonNode rootNode = objectMapper.readTree(file);
                 JsonNode dataNode = rootNode.get("data");
                 sites = objectMapper.convertValue(dataNode, new TypeReference<List<Site>>() {});
-                sites.forEach(this::enrichWithEconomics);
+//                sites.forEach(this::enrichWithEconomics);
+                sites.forEach(site -> enrichWithEconomics(site, null));
+
+                
                 return sites;
             } catch (IOException e) {
                 e.printStackTrace();
