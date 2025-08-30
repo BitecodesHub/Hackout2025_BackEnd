@@ -2,16 +2,17 @@
 # Spring Boot / Maven
 # -------------------------
 
-# Ignore Maven build outputs
-target/
+# Ignore all target contents
+target/*
+
+# But keep any JARs in target
+!target/*.jar
+
+# Ignore Maven wrapper jar (optional)
 .mvn/wrapper/maven-wrapper.jar
 
-# Allow module-specific targets
-!**/src/main/**/target/
-!**/src/test/**/target/
-
 # -------------------------
-# Spring Tool Suite (STS)
+# STS
 # -------------------------
 .apt_generated
 .classpath
@@ -37,10 +38,6 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-
-# Allow module-specific builds
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 # -------------------------
 # VS Code
