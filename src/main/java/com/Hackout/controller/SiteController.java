@@ -24,7 +24,7 @@ import com.Hackout.services.SiteService;
 @CrossOrigin("*")
 public class SiteController {
 
-    private SiteService siteService;
+    private final SiteService siteService;
     private final RestTemplate restTemplate;
     
     public SiteController(RestTemplate restTemplate,SiteService siteService) {
