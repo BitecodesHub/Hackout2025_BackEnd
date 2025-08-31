@@ -95,11 +95,13 @@ public class SiteService {
     /**
      * Enrich a Site with calculated LCOH and ROI.
      */
-    private void enrichWithEconomics(Site site,Double cap) {
-//        double capex = INITIAL_INVESTMENT;
-        double capex = (cap!=null && cap > 0) ? cap : INITIAL_INVESTMENT;
-        double opex = (capex * OPEX_FACTOR);
+    private void enrichWithEconomics(Site site, Double cap) {
+        System.err.println(cap);
+
+        double capex = (cap != null && cap > 0) ? cap : INITIAL_INVESTMENT;
+        double opex = capex * OPEX_FACTOR;
         double hydrogenProduction = site.getHydrogenProduction() > 0 ? site.getHydrogenProduction() : 1000.0;
+
         if (hydrogenProduction <= 0) {
             site.setLcoh(0);
             site.setRoi(0);
@@ -108,13 +110,15 @@ public class SiteService {
 
         double annualProduction = hydrogenProduction * 365;
 
-        // Real LCOH formula
+        // LCOH formula
         double lcoh = (capex + opex + GRID_FEES + TAXES - SUBSIDIES - OXYGEN_REVENUE) / annualProduction;
         site.setLcoh(lcoh);
 
-        // Real ROI formula
-        double roi = ((H2_PRICE - lcoh) * annualProduction) / INITIAL_INVESTMENT;
+        // ROI formula — must use capex, not INITIAL_INVESTMENT
+        long roi = Math.round(((H2_PRICE - lcoh) * annualProduction) / capex);
         site.setRoi(roi);
+
+//        site.setRoi(roi);
     }
 
     public List<Site> getAllSites() {
