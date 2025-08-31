@@ -87,8 +87,13 @@ public class SiteController {
     
     
     @GetMapping("/top")
-    public List<Site> getTop10Sites() {
-        return siteService.getTopSitesByFeasibility(10);
+    public List<Site> getTop5Sites() {
+        return siteService.getTopSitesByFeasibility(5);
+    }
+    
+    @GetMapping("/topp")
+    public List<Site> getTop12Sitess() {
+        return siteService.getTopSitesByFeasibility(20);
     }
     
     @GetMapping()

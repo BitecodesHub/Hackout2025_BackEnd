@@ -25,9 +25,9 @@ public class SiteService {
  // Static constants for India (assumptions)
     private static final double INITIAL_INVESTMENT = 50_00_00_000; // 50 Cr INR
     private static final double OPEX_FACTOR = 0.03; // ~3% of CAPEX per year
-    private static final double GRID_FEES = 2_50_00_000; // ~2.5 Cr INR/year (scaled down from 5 Cr)
-    private static final double TAXES = 1_00_00_000; // ~1 Cr INR/year (scaled down from 2 Cr)
-    private static final double SUBSIDIES = 5_00_00_000; // ~5 Cr INR/year (scaled down from 10 Cr)
+    private static final double GRID_FEES = 50_00_000; // ~2.5 Cr INR/year (scaled down from 5 Cr)
+    private static final double TAXES = 10_00_000; // ~1 Cr INR/year (scaled down from 2 Cr)
+    private static final double SUBSIDIES = 6_00_00_000; // ~5 Cr INR/year (scaled down from 10 Cr)
     private static final double OXYGEN_REVENUE = 50_00_000; // ~0.5 Cr INR/year (scaled down from 1 Cr)
     private static final double H2_PRICE = 397; // INR/kg (auction 2025, unchanged)
 

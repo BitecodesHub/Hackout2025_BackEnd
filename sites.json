@@ -49,7 +49,7 @@
 	    "Hydrogen_Production_kg/day": 2500,
 	    "Desalination_Power_kW": 0,
 	    "System_Efficiency_%": 80.0,
-	    "Feasibility_Score": 0.98
+	    "Feasibility_Score": 0.91
 	  },
 	  {
 	    "City": "Gorakhpur, Uttar Pradesh",
@@ -79,7 +79,7 @@
 	    "Hydrogen_Production_kg/day": 2800,
 	    "Desalination_Power_kW": 0,
 	    "System_Efficiency_%": 78.0,
-	    "Feasibility_Score": 0.97
+	    "Feasibility_Score": 0.93
 	  },
 	  {
 	    "City": "Bhuj, Gujarat",
@@ -94,21 +94,6 @@
 	    "Hydrogen_Production_kg/day": 6000,
 	    "Desalination_Power_kW": 0,
 	    "System_Efficiency_%": 92.0,
-	    "Feasibility_Score": 0.99
-	  },
-	  {
-	    "City": "Kandla, Gujarat",
-	    "Latitude": 23.030001,
-	    "Longitude": 70.220001,
-	    "Solar_Irradiance_kWh/m²/day": 5.6,
-	    "Temperature_C": 27.0,
-	    "Wind_Speed_m/s": 5.0,
-	    "PV_Power_kW": 2000,
-	    "Wind_Power_kW": 500,
-	    "Electrolyzer_Efficiency_%": 80.0,
-	    "Hydrogen_Production_kg/day": 1200,
-	    "Desalination_Power_kW": 0,
-	    "System_Efficiency_%": 85.0,
 	    "Feasibility_Score": 0.97
 	  },
 	  {
@@ -334,7 +319,7 @@
 	    "Hydrogen_Production_kg/day": 2800,
 	    "Desalination_Power_kW": 0,
 	    "System_Efficiency_%": 88.0,
-	    "Feasibility_Score": 0.98
+	    "Feasibility_Score": 0.97
 	  },
 	  {
 	    "City": "Ahmedabad, Gujarat",
@@ -352,20 +337,96 @@
 	    "Feasibility_Score": 0.98
 	  },
 	  {
-	    "City": "Kalol, Ahmedabad, Gujarat",
-	    "Latitude": 23.2500,
-	    "Longitude": 72.4900,
+	    "City": "Rajkot, Gujarat",
+	    "Latitude": 22.3039,
+	    "Longitude": 70.8022,
 	    "Solar_Irradiance_kWh/m²/day": 5.7,
-	    "Temperature_C": 27.0,
-	    "Wind_Speed_m/s": 3.6,
-	    "PV_Power_kW": 4500,
-	    "Wind_Power_kW": 300,
-	    "Electrolyzer_Efficiency_%": 80.0,
-	    "Hydrogen_Production_kg/day": 2800,
+	    "Temperature_C": 26.4,
+	    "Wind_Speed_m/s": 3.36,
+	    "PV_Power_kW": 5000,
+	    "Wind_Power_kW": 400,
+	    "Electrolyzer_Efficiency_%": 82.0,
+	    "Hydrogen_Production_kg/day": 3200,
 	    "Desalination_Power_kW": 0,
-	    "System_Efficiency_%": 85.0,
-	    "Feasibility_Score": 0.99
-	  },
+	    "System_Efficiency_%": 90.0,
+	    "Feasibility_Score": 0.97
+	  }
+,
+{
+  "City": "Bhavnagar, Gujarat",
+  "Latitude": 21.7645,
+  "Longitude": 72.1519,
+  "Solar_Irradiance_kWh/m²/day": 5.8,
+  "Temperature_C": 27.0,
+  "Wind_Speed_m/s": 3.5,
+  "PV_Power_kW": 5000,
+  "Wind_Power_kW": 400,
+  "Electrolyzer_Efficiency_%": 82.0,
+  "Hydrogen_Production_kg/day": 3100,
+  "Desalination_Power_kW": 0,
+  "System_Efficiency_%": 89.0,
+  "Feasibility_Score": 0.96
+},
+  {
+    "City": "Indore, Madhya Pradesh",
+    "Latitude": 22.7196,
+    "Longitude": 75.8577,
+    "Solar_Irradiance_kWh/m²/day": 5.5,
+    "Temperature_C": 26.8,
+    "Wind_Speed_m/s": 3.2,
+    "PV_Power_kW": 5000,
+    "Wind_Power_kW": 350,
+    "Electrolyzer_Efficiency_%": 82.0,
+    "Hydrogen_Production_kg/day": 3000,
+    "Desalination_Power_kW": 0,
+    "System_Efficiency_%": 88.0,
+    "Feasibility_Score": 0.95
+  },
+  {
+    "City": "Bhopal, Madhya Pradesh",
+    "Latitude": 23.2599,
+    "Longitude": 77.4126,
+    "Solar_Irradiance_kWh/m²/day": 5.4,
+    "Temperature_C": 26.5,
+    "Wind_Speed_m/s": 3.0,
+    "PV_Power_kW": 5000,
+    "Wind_Power_kW": 340,
+    "Electrolyzer_Efficiency_%": 82.0,
+    "Hydrogen_Production_kg/day": 2950,
+    "Desalination_Power_kW": 0,
+    "System_Efficiency_%": 87.5,
+    "Feasibility_Score": 0.95
+  },
+  {
+    "City": "Ranchi, Jharkhand",
+    "Latitude": 23.3441,
+    "Longitude": 85.3096,
+    "Solar_Irradiance_kWh/m²/day": 5.0,
+    "Temperature_C": 25.5,
+    "Wind_Speed_m/s": 2.8,
+    "PV_Power_kW": 4500,
+    "Wind_Power_kW": 300,
+    "Electrolyzer_Efficiency_%": 82.0,
+    "Hydrogen_Production_kg/day": 2800,
+    "Desalination_Power_kW": 0,
+    "System_Efficiency_%": 86.0,
+    "Feasibility_Score": 0.94
+  },
+  {
+    "City": "Amravati, Maharashtra",
+    "Latitude": 20.9333,
+    "Longitude": 77.7500,
+    "Solar_Irradiance_kWh/m²/day": 5.6,
+    "Temperature_C": 27.0,
+    "Wind_Speed_m/s": 3.1,
+    "PV_Power_kW": 4800,
+    "Wind_Power_kW": 320,
+    "Electrolyzer_Efficiency_%": 82.0,
+    "Hydrogen_Production_kg/day": 2900,
+    "Desalination_Power_kW": 0,
+    "System_Efficiency_%": 87.0,
+    "Feasibility_Score": 0.96
+  },
 	  {
 	    "City": "Mundra, Gujarat",
 	    "Latitude": 22.839520,
@@ -379,23 +440,23 @@
 	    "Hydrogen_Production_kg/day": 5000,
 	    "Desalination_Power_kW": 0,
 	    "System_Efficiency_%": 90.0,
-	    "Feasibility_Score": 0.98
-	  },
-	  {
-	    "City": "Kutch / Mundra, Gujarat",
-	    "Latitude": 23.0,
-	    "Longitude": 69.7,
-	    "Solar_Irradiance_kWh/m²/day": 6.0,
-	    "Temperature_C": 28.0,
-	    "Wind_Speed_m/s": 5.5,
-	    "PV_Power_kW": 6000,
-	    "Wind_Power_kW": 0,
-	    "Electrolyzer_Efficiency_%": 82.0,
-	    "Hydrogen_Production_kg/day": 5500,
-	    "Desalination_Power_kW": 0,
-	    "System_Efficiency_%": 88.0,
 	    "Feasibility_Score": 0.97
 	  },
+	  {
+	      "City": "Jamshedpur, Jharkhand",
+	      "Latitude": 22.8046,
+	      "Longitude": 86.2029,
+	      "Solar_Irradiance_kWh/m²/day": 5.1,
+	      "Temperature_C": 25.5,
+	      "Wind_Speed_m/s": 2.9,
+	      "PV_Power_kW": 4500,
+	      "Wind_Power_kW": 280,
+	      "Electrolyzer_Efficiency_%": 82.0,
+	      "Hydrogen_Production_kg/day": 2750,
+	      "Desalination_Power_kW": 0,
+	      "System_Efficiency_%": 85.5,
+	      "Feasibility_Score": 0.94
+	    },
     {
       "City": "City-1",
       "Latitude": 23.115249079745556,
